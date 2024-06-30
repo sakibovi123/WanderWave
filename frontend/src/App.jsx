@@ -9,13 +9,14 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom";
+import Home from './pages/main/Home';
 
 function App() {
   
   return (
     <>
     <Routes>
-      
+      <Route exact path="/"  element={<Home />}></Route>
     </Routes>
     </>
   )
