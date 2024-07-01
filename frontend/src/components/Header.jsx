@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { RxAvatar } from "react-icons/rx";
 import LanguageModal from "./LanguageModal";
 import { MdCleaningServices } from "react-icons/md";
+import wanderLogo from '../assets/logo-transparent.png';
 
 function Header() {
   const [showModal, setModal] = useState(false);
@@ -14,15 +15,10 @@ function Header() {
 
   return (
     <div>
-      <div className="w-full flex  items-center justify-between p-7">
-        <div className="logo-area">
-          <a
-            href="/"
-            className="text-3xl font-bold text-rose-500 cursor-pointer"
-          >
-            WANDERWAVE
-          </a>
-        </div>
+      <div className="w-full flex  items-center justify-between p-7 h-[80px]">
+        {/* <div className="logo-area w-[10%] h-[10%]"> */}
+          <img src={ wanderLogo } className="cursor-pointer w-[15%] h-[200px]" alt="" />
+        {/* </div> */}
 
         <div className="menu-area flex items-center gap-5">
           <svg
