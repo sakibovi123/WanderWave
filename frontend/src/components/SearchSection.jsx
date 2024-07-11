@@ -4,6 +4,7 @@ import { HiMinus } from "react-icons/hi2";
 import { HiMiniPlus } from "react-icons/hi2";
 
 
+
 export default function SearchSection () {
     const [value, setValue] = useState({
         startDate: new Date(),

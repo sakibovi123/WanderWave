@@ -12,19 +12,24 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(os.path.join(BASE_DIR, '../' '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "g5c7o+3pnqv&#_b8k!j$m*b(a5hnryo+tc0uya*59_+fck(f1*"
+SECRET_KEY = os.getenv("APP_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG_MODE")
+SITE_PROD_MODE = os.getenv("DEBUG_MODE")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -40,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework_simplejwt',
     'authentication',
-    'corsheaders'
+    'corsheaders',
+    'django_rest_passwordreset',
+    'category'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +62,7 @@ MIDDLEWARE = [
 ]
 
 # CORS SETTINGS
-CORS_ALLOW_ALL_ORIGINS = os.getenv("CORS_ALLOW_ALL_ORIGINS")
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'wander.urls'
 
@@ -93,6 +100,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'authentication.UserAccount'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

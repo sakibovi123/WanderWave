@@ -44,7 +44,7 @@ class UserAccountManager(BaseUserManager):
 class UserAccount(AbstractBaseUser, PermissionsMixin):
     created_at = models.DateField(default=datetime.now)
     updated_at = models.DateField(default=datetime.now)
-    created_by = models.PositiveBigIntegerField(null=True, blank=True)
+    # created_by = models.PositiveBigIntegerField(null=True, blank=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255, unique=True)

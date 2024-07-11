@@ -17,7 +17,7 @@ class UserAccountSerializer(serializers.ModelSerializer):
             "phone_number",
             "company_name",
             "is_buyer",
-            "role",
+            # "role",
             "is_active"
         ]
         
@@ -27,7 +27,7 @@ class UserAccountSerializer(serializers.ModelSerializer):
             last_name = validated_data.get("last_name")
             email = validated_data.get("email")
             password = validated_data.get("password")
-            role = validated_data.get("role")
+            # role = validated_data.get("role")
             created_by = validated_data.get("created_at")
             existing_user = UserAccount.objects.filter(
                 email=email
