@@ -38,8 +38,6 @@ class UserRegistrationView(APIView):
             return response({"Error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-
-
 class GetAllUsersView(APIView):
     if settings.SITE_PROD_MODE:
         permission_classes = [IsAuthenticated]
